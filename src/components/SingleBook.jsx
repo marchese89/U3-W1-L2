@@ -21,33 +21,31 @@ class SingleBook extends Component {
 
   render() {
     return (
-      <Col xs={12} sm={6} md={4} lg={3}>
-        <Card
-          className={this.state.selected ? "selected" : ""}
-          onClick={() => {
-            let actual = this.state.selected;
-            if (actual) {
-              this.setState({ selected: false });
-            } else {
-              this.setState({ selected: true });
-            }
-          }}
-        >
-          <Card.Img
-            variant="top"
-            src={this.props.book.img}
-            className="card-img"
-          />
-          <Card.Body>
-            <Card.Title>{reduceText(this.props.book.title, 20)}</Card.Title>
-            <Card.Text>
-              Categoria:&nbsp;
-              {this.props.book.category}
-            </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
-          </Card.Body>
-        </Card>
-      </Col>
+      <Card
+        className={this.state.selected ? "selected" : ""}
+        onClick={() => {
+          let actual = this.state.selected;
+          if (actual) {
+            this.setState({ selected: false });
+          } else {
+            this.setState({ selected: true });
+          }
+        }}
+      >
+        <Card.Img
+          variant="top"
+          src={this.props.book.img}
+          className="card-img"
+        />
+        <Card.Body>
+          <Card.Title>{reduceText(this.props.book.title, 20)}</Card.Title>
+          <Card.Text>
+            Categoria:&nbsp;
+            {this.props.book.category}
+          </Card.Text>
+          <Button variant="primary">Go somewhere</Button>
+        </Card.Body>
+      </Card>
     );
   }
 }
