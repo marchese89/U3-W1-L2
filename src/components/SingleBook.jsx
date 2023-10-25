@@ -24,12 +24,9 @@ class SingleBook extends Component {
       <Card
         className={this.state.selected ? "selected" : ""}
         onClick={() => {
-          let actual = this.state.selected;
-          if (actual) {
-            this.setState({ selected: false });
-          } else {
-            this.setState({ selected: true });
-          }
+          this.setState(
+            this.state.selected ? { selected: false } : { selected: true }
+          );
         }}
       >
         <Card.Img
